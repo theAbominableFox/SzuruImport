@@ -58,7 +58,7 @@ jobs:
       - name: Build
         run: pnpm build
         env:
-          SZ_GECKO_ID: 13372607-2257-4360-8f51-5ce66fa73350
+          SZ_GECKO_ID: e6a9a62f-e8d8-42e8-a284-5084507b117c
 
       - name: Pack XPI (unsigned)
         run: pnpm pack:xpi
@@ -84,7 +84,7 @@ jobs:
       - name: Build
         run: pnpm build
         env:
-          SZ_GECKO_ID: 13372607-2257-4360-8f51-5ce66fa73350
+          SZ_GECKO_ID: e6a9a62f-e8d8-42e8-a284-5084507b117c
 
       - name: Sign XPI
         run: pnpm sign:firefox --channel unlisted
@@ -93,7 +93,9 @@ jobs:
           WEB_EXT_API_SECRET: ${{ secrets.WEB_EXT_API_SECRET }}
 
       - name: Rename XPI
-        run: rename.ul szuruchrome_gh- SzuruChrome-v web-ext-artifacts/*.xpi
+        run: |
+          f=$(ls web-ext-artifacts/*.xpi | head -n1)
+          mv "$f" "web-ext-artifacts/SzuruImport-v${VITE_SZ_VERSION}.xpi"
 
       - uses: actions/upload-artifact@v4
         with:
@@ -116,7 +118,7 @@ jobs:
       - name: Build
         run: pnpm build
         env:
-          SZ_GECKO_ID: 18365332-8485-4c04-9498-2843a41ab620
+          SZ_GECKO_ID: e6a9a62f-e8d8-42e8-a284-5084507b117c
 
       - name: Sign XPI and upload to AMO
         run: pnpm sign:firefox --channel listed
