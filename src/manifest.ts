@@ -87,6 +87,14 @@ export async function getManifest() {
     };
   }
 
+  // Firefox's default MV3 extension-page CSP includes `upgrade-insecure-requests`,
+  // which silently rewrites http:// API calls to https:// and breaks
+  // szurubooru instances served over plain HTTP (e.g. on a LAN). Declare the
+  // policy explicitly without that directive.
+  (manifest as any).content_security_policy = {
+    extension_pages: "script-src 'self'; object-src 'self';",
+  };
+
   if (isDev) {
     // Firefox caches scripts injected into an already open tab. The dev hook
     // re-injects the latest bundle after navigation, but only on granted source
