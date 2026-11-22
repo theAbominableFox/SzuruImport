@@ -585,7 +585,7 @@ useDark();
     <div class="gc-bar">
       <div class="gc-brand">
         <img :src="extIconUrl" class="glass-ext-icon" alt="" />
-        <span class="gc-brand-name">SzuruChrome</span>
+        <span class="gc-brand-name">SzuruImport</span>
       </div>
       <div class="gc-controls">
         <!-- Server picker (same markup as main popup) -->
@@ -669,7 +669,7 @@ useDark();
     <!-- Top chrome bar -->
     <header class="glass-chrome">
       <div class="glass-chrome-left">
-        <img :src="extIconUrl" class="glass-ext-icon" alt="SzuruChrome" />
+        <img :src="extIconUrl" class="glass-ext-icon" alt="SzuruImport" />
         <span class="glass-server-status" :class="serverOnline === true ? 'online' : serverOnline === false ? 'offline' : 'checking'">
           <span class="glass-status-dot"></span>
           {{ serverOnline === true ? 'Online' : serverOnline === false ? 'Offline' : '...' }}

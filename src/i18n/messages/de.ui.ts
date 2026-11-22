@@ -3,7 +3,7 @@
 
 export default {
   // ── Options-Seite ─────────────────────────────────────
-  "options.brand": "SzuruChrome Reworked",
+  "options.brand": "SzuruImport",
   "options.forkBy": "Fork von Sumo",
 
   "options.tab.tags": "Tags",
@@ -15,7 +15,7 @@ export default {
   "options.tab.about": "Über",
   "options.import.title": "Import",
   "options.onPage.title": "Auf der Seite",
-  "options.onPage.lede": "Was SzuruChrome auf den Booru-Seiten einblendet, die du besuchst.",
+  "options.onPage.lede": "Was SzuruImport auf den Booru-Seiten einblendet, die du besuchst.",
   "options.connections.title": "Verbindungen",
   "options.appearance.title": "Darstellung",
   "options.data.title": "Daten",

@@ -23,7 +23,7 @@ export function refreshQueueBadge(): void {
   const api = action();
   void api.setBadgeText?.({ text });
   void api.setBadgeBackgroundColor?.({ color: "#5b4bdb" });
-  void api.setTitle?.({ title: count === 0 ? "SzuruChrome" : `SzuruChrome — ${count} import${count === 1 ? "" : "s"} queued` });
+  void api.setTitle?.({ title: count === 0 ? "SzuruImport" : `SzuruImport — ${count} import${count === 1 ? "" : "s"} queued` });
 }
 
 /** Mark the current tab when its source already exists in the instance. */
@@ -32,9 +32,9 @@ export function setImportedTabBadge(tabId: number, imported: boolean): void {
   void api.setBadgeText?.({ tabId, text: imported ? "✓" : "" });
   if (imported) {
     void api.setBadgeBackgroundColor?.({ tabId, color: "#198754" });
-    void api.setTitle?.({ tabId, title: "SzuruChrome — already imported" });
+    void api.setTitle?.({ tabId, title: "SzuruImport — already imported" });
   } else {
-    void api.setTitle?.({ tabId, title: "SzuruChrome" });
+    void api.setTitle?.({ tabId, title: "SzuruImport" });
   }
 }
 
